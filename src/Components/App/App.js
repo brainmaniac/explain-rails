@@ -32,7 +32,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <p>
-            Explain rails
+            Explain rails<br></br>
             (v1 - ActiveRecord only)
           </p>
         </header>
@@ -40,7 +40,7 @@ class App extends React.Component {
   
         <form onSubmit={this.handleSubmit}>
           <label>
-            Name:
+            Explain this:
             <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Type your query.." />
           </label>
           <input type="submit" value="Submit" />
