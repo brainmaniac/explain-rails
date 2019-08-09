@@ -1,25 +1,18 @@
 import React from 'react';
+import commands from '../../data/commands.js';
 
 function QueryAnswer(props) {
     
     let arrayFromInput = props.query.foo.split('.');
-    const commandsFromDocumentation = { 
-        "find":"https://guides.rubyonrails.org/active_record_querying.html#find", 
-        "take":"https://guides.rubyonrails.org/active_record_querying.html#take", 
-        "first":"https://guides.rubyonrails.org/active_record_querying.html#first",
-        "last":"https://guides.rubyonrails.org/active_record_querying.html#last",
-        "find_by":"https://guides.rubyonrails.org/active_record_querying.html#find-by",
-    }
 
     return(
         <div className="answer">
-            
             {arrayFromInput.map((substring, key) => {
-                if(substring in commandsFromDocumentation)
+                if(substring in commands)
                     if(key === 0)
-                        return <a className="link-blue" href={commandsFromDocumentation[substring]} key={key} target="_blank">{substring}</a>
+                        return <a className="link-blue" href={commands[substring].url} key={key} target="_blank" rel="noopener norefferer">{substring}</a>
                     else
-                        return <span key={key} className="link-blue">.<a className="link-blue" href={commandsFromDocumentation[substring]} target="_blank">{substring}</a></span>
+                        return <span key={key} className="link-blue">.<a className="link-blue" href={commands[substring].url} target="_blank" el="noopener norefferer">{substring}</a></span>
 
                 else
                     if(key === 0)
